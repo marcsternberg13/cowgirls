@@ -105,6 +105,14 @@ section+section{border-top:1px solid var(--rule)}
 .featured p{font-size:14px;color:var(--muted)}
 .experts{columns:4 200px;column-gap:28px;list-style:none;margin:0;padding:0}
 .experts li{font-size:15px;padding-block:6px;border-bottom:1px solid var(--rule);break-inside:avoid}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.vid{display:grid;gap:8px;color:var(--ink);text-decoration:none;min-width:0}
+.vid b{font:700 22px/1.2 var(--display)}
+.thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:var(--ink) center/cover no-repeat;margin-bottom:6px}
+.play{position:absolute;left:16px;bottom:16px;width:48px;height:48px;border-radius:50%;background:var(--turq);display:grid;place-items:center;transition:transform .2s}
+.play svg{width:18px;height:18px;fill:var(--land)}
+.vid:hover .play{transform:scale(1.1)}
+.vid:hover b{color:var(--turq)}
 .partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;list-style:none;padding:0}
 .partners li{background:var(--panel);padding:10px 14px;font-size:14px}
 
@@ -142,6 +150,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <nav><div class="wrap">
   <span class="mark">COWGIRLS</span>
   <ul>
+    <li><a href="#watch">Watch</a></li>
     <li><a href="#film">The Film</a></li>
     <li><a href="#series">Web Series</a></li>
     <li><a href="#artists">Artists</a></li>
@@ -195,6 +204,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <a class="btn" href="#series">Watch the series</a>
       </article>
     </div>
+  </div>
+</section>
+
+<section id="watch">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Watch on YouTube</span>
+      <h2>Trailers and episodes.</h2>
+    </div>
+    <div class="vids">
+      <a class="vid" href="https://youtu.be/hJUQoPJCSPs">
+        <span class="thumb" style="background-image:url('https://i.ytimg.com/vi/hJUQoPJCSPs/hqdefault.jpg')"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5l7.5 4.5L3 10.5z"/></svg></span></span>
+        <span class="label">The feature documentary</span>
+        <b>Teaser Trailer</b>
+      </a>
+      <a class="vid" href="https://youtu.be/pwr3A--3nO8">
+        <span class="thumb" style="background-image:url('https://i.ytimg.com/vi/pwr3A--3nO8/hqdefault.jpg')"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5l7.5 4.5L3 10.5z"/></svg></span></span>
+        <span class="label">Web series · Alice Leese</span>
+        <b>EP. 01 · Texas</b>
+      </a>
+      <a class="vid" href="https://youtu.be/voOR6Bg_A0I">
+        <span class="thumb" style="background-image:url('https://i.ytimg.com/vi/voOR6Bg_A0I/hqdefault.jpg')"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5l7.5 4.5L3 10.5z"/></svg></span></span>
+        <span class="label">Terri Kelly Moyers</span>
+        <b>Interview Trailer</b>
+      </a>
+    </div>
+    <a class="btn" style="margin-top:28px" href="https://www.youtube.com/@SonofaBotanist">See everything on the channel ↗</a>
   </div>
 </section>
 
