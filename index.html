@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cowgirls: Women of Western Art. A feature documentary and YouTube web series on the women artists of the American West. A Son of a Botanist Production narrated by Red Steagall.">
+<meta property="og:title" content="Cowgirls: Women of Western Art">
+<meta property="og:description" content="They painted the American West and built businesses to match. Meet the cowgirl artists who never asked the art world's permission.">
+<meta property="og:type" content="website">
+<title>Cowgirls: Women of Western Art</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,700;1,500&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: high-desert dusk. Full-width bands; a horizon line divides sky (hero) from land (content); credits set like an end roll. */
+:root{
+  --sky:#E7ECEC; --land:#F3F1EC; --ink:#231A15; --muted:#6B5E55;
+  --turq:#17706D; --ochre:#B8732A; --rule:#D3CCC2; --panel:#EBE7DF;
+  --display:"Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --body:"Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --sky:#141B1E; --land:#1A1613; --ink:#EFE8DF; --muted:#A8998C;
+  --turq:#4FB3AE; --ochre:#E09A55; --rule:#3A322C; --panel:#231E1A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sky:#141B1E; --land:#1A1613; --ink:#EFE8DF; --muted:#A8998C;
+  --turq:#4FB3AE; --ochre:#E09A55; --rule:#3A322C; --panel:#231E1A; color-scheme:dark}
+
+body{background:var(--land);color:var(--ink);font:16px/1.65 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--turq)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+p{margin:0}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sky);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;padding-block:12px;flex-wrap:wrap}
+nav .mark{font:700 18px/1 var(--display);letter-spacing:.04em}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font:500 13px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+nav a:hover{color:var(--turq)}
+
+/* hero */
+.hero{background:var(--sky)}
+.hero .wrap{padding-block:clamp(48px,9vw,104px) 0;display:grid;gap:28px}
+.hero h1{font-size:clamp(64px,15vw,184px);font-weight:700;letter-spacing:-.02em;line-height:.86}
+.hero h1 span{display:block;font-size:.26em;font-weight:500;font-style:italic;letter-spacing:0;color:var(--ochre);margin-top:.35em;line-height:1.1}
+.hero .log{font:500 clamp(19px,2.4vw,24px)/1.45 var(--body);max-width:30ch}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;padding-bottom:40px}
+.hero .meta div{display:grid;gap:2px}
+.hero .meta b{font:600 15px/1.3 var(--body)}
+.horizon{height:6px;background:linear-gradient(90deg,var(--ochre) 0 38%,var(--turq) 38% 100%)}
+
+section{padding-block:clamp(56px,8vw,96px)}
+section+section{border-top:1px solid var(--rule)}
+.head{display:grid;gap:10px;margin-bottom:36px}
+.head h2{font-size:clamp(36px,5.5vw,60px);font-weight:700}
+
+/* two formats */
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.fmt{background:var(--panel);padding:28px;display:grid;gap:14px;align-content:start;border-top:4px solid var(--turq)}
+.fmt.series{border-top-color:var(--ochre)}
+.fmt h3{font-size:30px}
+.fmt dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:6px 0 0;font-size:15px}
+.fmt dt{font:500 12px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fmt dd{margin:0}
+
+/* feature */
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:48px}
+.feature>*{min-width:0}
+.prose{display:grid;gap:18px;max-width:62ch}
+.prose p.lead{font:500 21px/1.5 var(--body)}
+.acts{display:grid;gap:0;border-top:1px solid var(--rule)}
+.act{display:grid;grid-template-columns:72px 1fr;gap:16px;padding-block:18px;border-bottom:1px solid var(--rule)}
+.act .n{font:700 34px/1 var(--display);color:var(--turq)}
+.act b{font:700 20px/1.2 var(--display);display:block;margin-bottom:4px}
+.act p{color:var(--muted);font-size:15px}
+.quote{font:500 italic clamp(24px,3vw,32px)/1.3 var(--display);border-left:4px solid var(--ochre);padding-left:20px;margin-top:8px}
+
+/* series */
+.ep{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:0;background:var(--panel);margin-bottom:28px}
+.ep .card{background:var(--ink);color:var(--land);padding:32px;display:grid;align-content:space-between;gap:28px;min-height:260px}
+.ep .card .label{color:var(--ochre)}
+.ep .card h3{font-size:clamp(40px,6vw,64px);color:var(--land)}
+.ep .card .tex{font:500 13px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.ep .info{padding:32px;display:grid;gap:16px;align-content:start}
+.ep .info h4{margin:0;font:700 24px/1.2 var(--display)}
+.btn{display:inline-flex;align-items:center;gap:10px;justify-self:start;background:var(--turq);color:var(--land);text-decoration:none;font:600 14px/1 var(--body);padding:14px 20px}
+.btn:hover{filter:brightness(1.1)}
+.btn svg{width:12px;height:12px;fill:currentColor}
+.upcoming{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.slot{border:1px dashed var(--rule);padding:20px;display:grid;gap:6px}
+.slot .n{font:700 22px/1 var(--display);color:var(--muted)}
+.slot p{font-size:14px;color:var(--muted)}
+
+/* artists */
+.roster{columns:3 220px;column-gap:32px;list-style:none;margin:0;padding:0}
+.roster li{font:500 21px/1.25 var(--display);padding-block:9px;border-bottom:1px solid var(--rule);break-inside:avoid}
+.roster li.s1{color:var(--ochre)}
+.roster li.s1::after{content:"Web series · Ep. 1";display:block;font:500 11px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px 32px;margin-bottom:40px}
+.featured>div{border-top:2px solid var(--ink);padding-top:12px;display:grid;gap:6px;align-content:start;min-width:0}
+.featured b{font:700 22px/1.15 var(--display)}
+.featured p{font-size:14px;color:var(--muted)}
+.experts{columns:4 200px;column-gap:28px;list-style:none;margin:0;padding:0}
+.experts li{font-size:15px;padding-block:6px;border-bottom:1px solid var(--rule);break-inside:avoid}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;list-style:none;padding:0}
+.partners li{background:var(--panel);padding:10px 14px;font-size:14px}
+
+/* credits */
+.credits{background:var(--ink);color:var(--land)}
+.credits .label{color:var(--ochre)}
+.credits h2{color:var(--land)}
+.roll{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 48px}
+.roll div{display:grid;gap:4px;align-content:start}
+.roll .label{margin-bottom:6px}
+.roll p{font:500 19px/1.35 var(--display)}
+.roll p small{display:block;font:400 13px/1.4 var(--body);opacity:.7}
+.bio{max-width:62ch;margin-top:48px;padding-top:32px;border-top:1px solid color-mix(in srgb,var(--land) 22%,transparent);display:grid;gap:12px}
+.bio p{opacity:.85}
+
+footer{padding-block:32px;font:400 13px/1.6 var(--mono);color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .feature,.ep{grid-template-columns:1fr}
+  .act{grid-template-columns:52px 1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .horizon{transform-origin:left;animation:draw 1.2s .2s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{transform:translateY(18px)}to{transform:none}}
+  @keyframes draw{from{transform:scaleX(.15)}to{transform:none}}
+}
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
+</head>
+<body>
+
+
+<nav><div class="wrap">
+  <span class="mark">COWGIRLS</span>
+  <ul>
+    <li><a href="#film">The Film</a></li>
+    <li><a href="#series">Web Series</a></li>
+    <li><a href="#artists">Artists</a></li>
+    <li><a href="#credits">Credits</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">A Son of a Botanist Production · Narrated by Red Steagall</span>
+    <h1>Cowgirls<span>Women of Western Art</span></h1>
+    <p class="log">They painted the American West and built businesses to match. Meet the cowgirl artists who never asked the art world’s permission.</p>
+    <div class="meta">
+      <div><span class="label">Feature</span><b>Documentary film</b></div>
+      <div><span class="label">Web series</span><b>Season One on YouTube</b></div>
+      <div><span class="label">Now streaming</span><b>Ep. 1 · Alice Leese</b></div>
+    </div>
+  </div>
+  <div class="horizon" aria-hidden="true"></div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Two ways to watch</span>
+      <h2>One film. One series. One West.</h2>
+    </div>
+    <div class="formats">
+      <article class="fmt">
+        <span class="label">The feature</span>
+        <h3>Cowgirls: Women of Western Art</h3>
+        <p>A feature documentary following contemporary women artists who are shaping how the American West is seen, collected, and remembered.</p>
+        <dl>
+          <dt>Format</dt><dd>Feature documentary</dd>
+          <dt>Runtime</dt><dd>60 minutes</dd>
+          <dt>Narrator</dt><dd>Red Steagall</dd>
+          <dt>Interviews</dt><dd>50 on camera: 29 artists, 24 experts</dd>
+          <dt>Voices</dt><dd>Artists, gallery owners, museum curators and art historians</dd>
+        </dl>
+        <a class="btn" href="#film">About the film</a>
+      </article>
+      <article class="fmt series">
+        <span class="label">The web series</span>
+        <h3>Cowgirls: The Interviews</h3>
+        <p>Longer conversations from the feature, released one artist at a time. Each episode runs five to ten minutes and gives the full story behind the work.</p>
+        <dl>
+          <dt>Platform</dt><dd>YouTube</dd>
+          <dt>Season One</dt><dd>Texas-based cowgirl artists</dd>
+          <dt>Runtime</dt><dd>5–10 min per episode</dd>
+        </dl>
+        <a class="btn" href="#series">Watch the series</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="film">
+  <div class="wrap feature">
+    <div class="prose">
+      <div class="head" style="margin-bottom:8px">
+        <span class="label">The feature documentary</span>
+        <h2>The West was never just a man’s story.</h2>
+      </div>
+      <p class="lead">These are the women painting a more complete picture.</p>
+      <p>Cowgirls follows contemporary female Western artists creating powerful, authentic work and building serious careers in galleries, museums, and private collections. The film celebrates their talent, their commercial success, and the cultural impact of artists who are changing how we see the American West.</p>
+      <p>Alongside the artists, the film hears from the gallery owners who represent them and the museum curators and art historians who are bringing their work into permanent collections. Red Steagall narrates in the voice of a campfire storyteller.</p>
+      <p class="quote">Painters, sculptors, ranchers, and businesswomen.</p>
+    </div>
+    <div>
+      <span class="label">In three acts</span>
+      <div class="acts" style="margin-top:14px">
+        <div class="act"><span class="n">I</span><div><b>Why now</b><p>Museums, collectors, and shows are turning toward women working in Western art.</p></div></div>
+        <div class="act"><span class="n">II</span><div><b>The work</b><p>In the studio and on the land with artists who live the West they paint and sculpt.</p></div></div>
+        <div class="act"><span class="n">III</span><div><b>The business</b><p>How these artists built careers, markets, and collector bases of their own.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="series">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The web series · Season One · Texas</span>
+      <h2>Sit down with the artists.</h2>
+      <p style="max-width:60ch">The feature can only hold so much. The series releases the longer interviews, five to ten minutes each, so every artist can tell her story in full. Season One travels across Texas.</p>
+    </div>
+
+    <article class="ep">
+      <div class="card">
+        <span class="label">Episode 1 · Now streaming</span>
+        <h3>Alice Leese</h3>
+        <span class="tex">Season One · Texas</span>
+      </div>
+      <div class="info">
+        <h4>Episode 1: Alice Leese</h4>
+        <p>The series opens with Alice Leese. In an extended conversation recorded for the feature, she talks about her work, her process, and her life as a working artist in the West.</p>
+        <dl style="display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:15px">
+          <dt class="label" style="line-height:1.9">Released</dt><dd style="margin:0">October 2026</dd>
+          <dt class="label" style="line-height:1.9">Runtime</dt><dd style="margin:0">5–10 minutes</dd>
+        </dl>
+        <a class="btn" href="https://youtu.be/pwr3A--3nO8"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg>Watch on YouTube</a>
+      </div>
+    </article>
+
+    <span class="label">Coming to Season One</span>
+    <div class="upcoming" style="margin-top:14px">
+      <div class="slot"><span class="n">Ep. 2</span><p>Next Texas artist announced soon.</p></div>
+      <div class="slot"><span class="n">Ep. 3</span><p>In the edit.</p></div>
+      <div class="slot"><span class="n">Ep. 4</span><p>In the edit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="artists">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">29 artists · 24 experts · 50 interviews</span>
+      <h2>The women of the West.</h2>
+    </div>
+
+    <div class="featured">
+      <div><b>Donna Howell-Sickles</b><p>Defined the modern cowgirl image in charcoal and acrylic. National Cowgirl Museum &amp; Hall of Fame.</p></div>
+      <div><b>Terri Kelly Moyers</b><p>Among the most decorated painters working in the Western canon today.</p></div>
+      <div><b>Gladys Roldan-de-Moras</b><p>First Mexican-born woman inducted into the National Cowgirl Museum &amp; Hall of Fame.</p></div>
+      <div><b>Shawn Cameron</b><p>Sixth-generation Arizona ranching family. First woman invited to exhibit with the Cowboy Artists of America.</p></div>
+      <div><b>Sally Maxwell</b><p>One of twelve artists recognized as a Master by the International Society of Scratchboard Artists.</p></div>
+      <div><b>Krystii Melaine</b><p>Built one of Australia&rsquo;s largest bridal labels, then left it to paint the West. 2023 Quest for the West Artist of Distinction.</p></div>
+      <div><b>Felice House</b><p>Creator of the <em>Re-Western</em> series, classic Western film scenes recast with women.</p></div>
+      <div><b>Deborah Fellows</b><p>Public monument sculptor with major civic installations across the West.</p></div>
+    </div>
+
+    <span class="label">Also featured</span>
+    <ul class="roster" style="margin-top:12px">
+      <li>Chula Beauregard</li>
+      <li>Maeve Eichelberger</li>
+      <li>Jessica Garrett Lawrence</li>
+      <li>Chrissy Glenn</li>
+      <li>Terry Cooke Hall</li>
+      <li>Hannah Harper</li>
+      <li>Stephanie Hartshorn</li>
+      <li>Karin Hollebeke</li>
+      <li>Claire Holloway</li>
+      <li>Jane Hunt</li>
+      <li>Peggy Judy</li>
+      <li class="s1">Alice Leese</li>
+      <li>Annie Lopez</li>
+      <li>Maura Allen</li>
+      <li>Amanda Markel</li>
+      <li>Barbara Meikle</li>
+      <li>Heide Presse</li>
+      <li>Cathy Smith</li>
+      <li>Jill Soukup</li>
+      <li>Megan Wimberley</li>
+      <li>Star Liana York</li>
+    </ul>
+
+    <div class="head" style="margin:56px 0 16px">
+      <span class="label">Curators, historians, gallery owners &amp; collectors</span>
+    </div>
+    <ul class="experts">
+      <li>Dr. Andrew Patrick Nelson</li><li>Dr. Betsy Fahlman</li><li>Dr. Ricardo Romo</li><li>Dr. Harriett Romo</li>
+      <li>Seth Hopkins</li><li>Seth Spillman</li><li>Liz Jackson</li><li>Christine Mollring</li>
+      <li>Maryvonne Leshe</li><li>Tim Newton</li><li>Mark Sublette</li><li>Nicholas Reti</li>
+      <li>Sue Simpson Gallagher</li><li>Bob &amp; Nancy Tia Brown</li><li>Laura Fry</li><li>Krista Steed-Reyes</li>
+      <li>Jamie Oberloh</li><li>Gabby G&aacute;mez</li><li>Cody Kuehl</li><li>Elizabeth Toledo</li>
+      <li>Allyson Sheumaker</li><li>Megan Wimberley</li><li>Felice House</li><li>Barbara Meikle</li>
+    </ul>
+
+    <div class="head" style="margin:56px 0 0">
+      <span class="label">Institutional partners</span>
+    </div>
+    <ul class="partners">
+      <li>Western Spirit: Scottsdale&rsquo;s Museum of the West</li>
+      <li>National Cowgirl Museum &amp; Hall of Fame</li>
+      <li>National Cowboy &amp; Western Heritage Museum</li>
+      <li>Eiteljorg Museum of American Indians and Western Art</li>
+      <li>Briscoe Western Art Museum</li>
+      <li>Desert Caballeros Western Museum</li>
+      <li>A.R. Mitchell Museum of Western Art</li>
+      <li>Booth Western Art Museum</li>
+      <li>Cowgirl Artists of America</li>
+      <li>Prix de West</li>
+      <li>Quest for the West</li>
+      <li>Buffalo Bill Art Show</li>
+      <li>Arizona Latino Arts &amp; Cultural Center</li>
+    </ul>
+  </div>
+</section>
+
+<section id="credits" class="credits">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Credits</span>
+      <h2>Made by.</h2>
+    </div>
+    <div class="roll">
+      <div><span class="label">Written, directed &amp; produced by</span><p>Marc Sternberg</p></div>
+      <div><span class="label">Co-director</span><p>Tierra (TT) Frost</p></div>
+      <div><span class="label">Narrator</span><p>Red Steagall<small>Texas Cowboy Poet Laureate</small></p></div>
+      <div><span class="label">Producer</span><p>Andrea Bari<small>Name and Like Productions</small></p></div>
+      <div><span class="label">Executive producers</span><p>David Griffin</p><p>Liz Jackson</p><p>Megan Wimberley</p><p>Allyson Sheumaker</p><p>Peggy Judy</p></div>
+      <div><span class="label">Associate producers</span><p>Dr. Andrew Patrick Nelson</p><p>Cody Kuehl</p></div>
+      <div><span class="label">Editor</span><p>Patrick Johnson<small>Hold It Now! Films</small></p></div>
+      <div><span class="label">Director of photography</span><p>Marc Sternberg</p><p>Andy Drachman<small>Terri Kelly Moyers interview</small></p></div>
+      <div><span class="label">Music</span><p>Octaviano Roges<small>Music Supervisor</small></p><p>Isabella Victoria Uhl<small>Contributing Music</small></p></div>
+      <div><span class="label">Production company</span><p>Son of a Botanist Productions</p></div>
+    </div>
+    <div class="bio">
+      <span class="label">About the filmmaker</span>
+      <p>Marc Sternberg is a documentary filmmaker and producer with more than twenty years of leadership in marketing and media. A Fulbright Specialist in media production, marketing, and entrepreneurship, he has produced and directed the documentaries <em>Undiscovered Country</em>, <em>Why We Mow</em>, and <em>His Way: Addiction and Recovery</em>.</p>
+      <p class="links" style="display:flex;gap:12px;flex-wrap:wrap;opacity:1">
+        <a class="btn" style="background:var(--ochre)" href="https://sonofabotanist.com">Son of a Botanist Productions ↗</a>
+        <a class="btn" style="background:var(--ochre)" href="https://jukfilm.com">jukfilm.com ↗</a>
+        <a class="btn" style="background:var(--ochre)" href="https://bloodcourtfilm.com/">Blood Court ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span>Cowgirls: Women of Western Art · © 2026 Son of a Botanist Productions</span>
+  <span><a href="https://sonofabotanist.com">sonofabotanist.com</a> · <a href="https://jukfilm.com">jukfilm.com</a> · <a href="https://bloodcourtfilm.com/">bloodcourtfilm.com</a></span>
+</div></footer>
+
+</body>
+</html>
